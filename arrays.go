@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func printArray(arr *[5]int) {
+func printArray(arr []int) {
 	arr[0] = 100
 	for i, v := range arr {
 		fmt.Println(i, v)
@@ -19,10 +19,10 @@ func main() {
 	fmt.Println(grid)
 
 	fmt.Println("printArray(arr1)")
-	printArray(&arr1)
+	printArray(arr1[:])
 
 	fmt.Println("printArray(arr3)")
-	printArray(&arr3)
+	printArray(arr3[:])
 
 	fmt.Println("arr1 and arr3")
 	fmt.Println(arr1, arr3)
