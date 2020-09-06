@@ -14,8 +14,9 @@ func (myNode *myTreeNode) postOrder() {
 		return
 	}
 	left := myTreeNode{myNode.node.Left}
-	left.postOrder()
 	right := myTreeNode{myNode.node.Right}
+
+	left.postOrder()
 	right.postOrder()
 	myNode.node.Print()
 }
@@ -30,8 +31,10 @@ func main() {
 	root.Left.Right = tree.CreateNode(2)
 	root.Right.Left.SetValue(4)
 
+	fmt.Print("In-order traversal: ")
 	root.Traverse()
-	fmt.Println()
+
+	fmt.Print("My own post-order traversal: ")
 	myRoot := myTreeNode{&root}
 	myRoot.postOrder()
 	fmt.Println()
