@@ -34,8 +34,14 @@ func main() {
 	fmt.Print("In-order traversal: ")
 	root.Traverse()
 
-	fmt.Print("My own post-order traversal: ")
-	myRoot := myTreeNode{&root}
-	myRoot.postOrder()
-	fmt.Println()
+	//fmt.Print("My own post-order traversal: ")
+	//myRoot := myTreeNode{&root}
+	//myRoot.postOrder()
+	//fmt.Println()
+
+	nodeCount := 0
+	root.TraverseFunc(func(node *tree.Node) {
+		nodeCount++
+	})
+	fmt.Println("Node count:", nodeCount)
 }
