@@ -13,6 +13,7 @@ func HandleFileList(writer http.ResponseWriter, request *http.Request) error {
 		return err
 	}
 	defer file.Close()
+
 	all, err := ioutil.ReadAll(file)
 	if err != nil {
 		return err
